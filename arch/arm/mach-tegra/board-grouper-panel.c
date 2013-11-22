@@ -218,7 +218,6 @@ static int grouper_panel_enable(void)
 		else
 			regulator_enable(grouper_lvds_vdd_panel);
 	}
-	msleep(20);
 
 	if( grouper_get_project_id() == GROUPER_PROJECT_BACH )
 	{
@@ -550,7 +549,7 @@ static struct tegra_dc_out grouper_disp1_out = {
 
 	.type		= TEGRA_DC_OUT_RGB,
 	.depth		= 18,
-	.dither		= TEGRA_DC_ERRDIFF_DITHER,
+	.dither		= TEGRA_DC_ORDERED_DITHER,
 
 	.modes		= grouper_panel_modes,
 	.n_modes	= ARRAY_SIZE(grouper_panel_modes),
